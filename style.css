@@ -91,6 +91,57 @@ select {
   }
 }
 
+.header-style {
+  position: fixed;
+  height: fit-content;
+  background-color: rgba(255, 255, 255, 0.8);
+  top: 0px;
+  z-index: 2;
+  backdrop-filter: blur(10px);
+  width: 100%;
+  margin: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 0 0.8rem 0.2rem rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+
+  color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  position: relative;
+  min-width: 100px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+}
+
+.search {
+  border: solid 2px rgba(0, 0, 0, 0.8);
+  height: 20px;
+  width: 100%;
+  padding: 0.9rem 5rem 0.9rem 1.8rem;
+  margin: 0.5rem;
+  background-color: rgba(218, 39, 39, 0);
+  border-radius: 1rem;
+  backdrop-filter: blur(1px);
+}
+
+.search:hover,
+.search:focus {
+  border: 1.5px solid #009688;
+  background-color: white;
+  border: solid 2px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 0.7rem 0.1rem rgba(0, 0, 0, 0.2);
+  transition-duration: 0.3s;
+}
+
 body {
   display: grid;
   place-content: center;
@@ -148,15 +199,16 @@ h3 {
   gap: 1.5rem;
   grid-auto-columns: 1fr;
   grid-template-areas:
-   'one'
-   'two'
-   'three'
-   'four'
-   'five';
+    "one"
+    "two"
+    "three"
+    "four"
+    "five";
 
   padding-block: 2rem;
   width: min(95%, 70rem);
   margin-inline: auto;
+  margin-top: 4rem;
 }
 
 .testimonial {
@@ -184,7 +236,7 @@ h3 {
 
 @media screen and (min-width: 33em) {
   .testimonial-grid {
-      grid-template-areas:
+    grid-template-areas:
       "one one"
       "two three"
       "five five"
@@ -195,16 +247,16 @@ h3 {
 @media screen and (min-width: 38em) {
   .testimonial-grid {
     grid-template-areas:
-     'one one'
-     'two five'
-     'three five'
-     'four four';
+      "one one"
+      "two five"
+      "three five"
+      "four four";
   }
 }
 
 @media screen and (min-width: 54em) {
   .testimonial-grid {
-      grid-template-areas:
+    grid-template-areas:
       "one one two"
       "five five five"
       "three four four";
@@ -213,12 +265,11 @@ h3 {
 
 @media screen and (min-width: 75em) {
   .testimonial-grid {
-      grid-template-areas:
+    grid-template-areas:
       "one one two five"
       "three four four five";
   }
 }
-
 
 .testimonial.quote {
   background-image: url("./images/bg-pattern-quotation.svg");
